@@ -19,7 +19,6 @@ end
 
 def get_contestant_name(data, occupation)
   # code here
-  name = nil
   data.each do |season_number, season_data|
     season_data.each do |contestants_data|
       contestants_data["occupation"] == occupation
