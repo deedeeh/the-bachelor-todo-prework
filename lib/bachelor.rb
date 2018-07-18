@@ -62,4 +62,19 @@ end
 
 def get_average_age_for_season(data, season)
   # code here
+  average_array = []
+  average_age = nil
+  data.each do |season_number, season_data|
+    if season_number == season
+      season_data.each do |contestants_data|
+        contestants_data.each do |k, v|
+          if k == "age"
+            average_array << v.to_f
+            average_age = average_array.inject {|sum, i|sum + i} / average_array.size
+          end
+        end
+      end
+    end
+  end
+  average_age.round
 end
