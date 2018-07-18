@@ -23,11 +23,10 @@ def get_contestant_name(data, occupation)
   data.each do |season_number, season_data|
     season_data.each do |contestants_data|
       contestants_data["occupation"] == occupation
-        name = contestants_data["name"] if k == "occupation" && v == occupation
+        return contestants_data["name"] 
       end
     end
   end
-  name
 end
 
 def count_contestants_by_hometown(data, hometown)
