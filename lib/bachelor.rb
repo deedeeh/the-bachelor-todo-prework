@@ -19,15 +19,13 @@ end
 
 def get_contestant_name(data, occupation)
   # code here
-  name = nil
-  data.each do |season_number, season_data|
-    season_data.each do |contestants_data|
-      contestants_data.each do |k, v|
-        name = contestants_data["name"] if k == "occupation" && v == occupation
+  data.each do |season, contestants_data|
+    contestants_data.each do |contestant_hash|
+      if contestant_hash["occupation"] == occupation
+        return contestant_hash["name"] 
       end
     end
   end
-  name
 end
 
 def count_contestants_by_hometown(data, hometown)
