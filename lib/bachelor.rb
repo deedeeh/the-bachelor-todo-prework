@@ -21,7 +21,7 @@ def get_contestant_name(data, occupation)
   # code here
   data.each do |season, contestants_data|
     season_data.each do |contestants_data|
-      contestants_data.each do |
+      contestants_data.each do |contestant_hash|
       contestants_data["occupation"] == occupation
         return contestants_data["name"] 
       end
